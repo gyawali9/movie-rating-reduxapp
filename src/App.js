@@ -1,6 +1,6 @@
 import React from 'react'
-
 import { BrowserRouter as Router, Route, Routes, Switch } from 'react-router-dom'
+
 import Header from './components/Header/Header'
 import Home from './components/Home/Home'
 import MovieDetail from './components/MovieDetail/MovieDetail'
@@ -12,12 +12,13 @@ const App = () => {
     <div className="app">
       <Router>
         <Header></Header>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="movie/:imdbID" element={<MovieDetail />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-        
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="movie/:imdbID" element={<MovieDetail />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </div> 
         <Footer/>
       </Router>
     </div>
